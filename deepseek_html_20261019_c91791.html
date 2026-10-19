@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CarZone | Гараж</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Шапка -->
+        <header class="top-bar">
+            <div class="balance">
+                <span class="coin">₽</span>
+                <span id="balance-amount">150 000</span>
+            </div>
+            <div class="user-info" id="user-name">Игрок</div>
+        </header>
+
+        <!-- Основной контент -->
+        <main id="main-content">
+            <!-- Вкладка Гараж -->
+            <section id="garage-view" class="view active">
+                <h2>Мой Гараж</h2>
+                <div class="car-grid" id="car-list">
+                    <!-- Машины будут добавлены через JS -->
+                </div>
+            </section>
+
+            <!-- Вкладка Тюнинг -->
+            <section id="tuning-view" class="view">
+                <h2>Тюнинг</h2>
+                <div id="selected-car-info">Выберите машину в гараже</div>
+                <div class="tuning-options" id="tuning-options">
+                    <button class="tune-btn" data-type="engine" data-cost="50000">Двигатель (+50 HP) — 50 000 ₽</button>
+                    <button class="tune-btn" data-type="suspension" data-cost="30000">Подвеска (Управляемость) — 30 000 ₽</button>
+                    <button class="tune-btn" data-type="body" data-cost="20000">Обвес (Внешний вид) — 20 000 ₽</button>
+                </div>
+            </section>
+
+            <!-- Вкладка Номера -->
+            <section id="plates-view" class="view">
+                <h2>Генератор Номеров</h2>
+                <p class="hint">Случайный номер за 5 000 ₽</p>
+                <div class="plate-actions">
+                    <button id="gen-ru" class="gen-btn">РФ</button>
+                    <button id="gen-kz" class="gen-btn">Казахстан</button>
+                    <button id="gen-by" class="gen-btn">Беларусь</button>
+                </div>
+                <div id="plate-result" class="plate-display">Нажмите кнопку</div>
+                <div id="saved-plates" class="saved-list"></div>
+            </section>
+        </main>
+
+        <!-- Нижняя навигация -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-target="garage-view">🚗 Гараж</button>
+            <button class="nav-btn" data-target="tuning-view">🔧 Тюнинг</button>
+            <button class="nav-btn" data-target="plates-view">🔢 Номера</button>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
